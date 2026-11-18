@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Nurqistina Balqis Binti Suhaidi">
+<meta name="description" content="Home page of the personal website of Nurqistina Balqis Binti Suhaidi - IMD318 individual project, UiTM.">
+<meta name="keywords" content="personal website, portfolio, UiTM, IMD318">
+<title>Home | Nurqistina Balqis Binti Suhaidi - IMD318 Personal Website</title>
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Roboto:wght@300;400;500&display=swap">
+<style>
+:root{--bg:#e6d6bb;--cream:#f4ecdc;--wine:#5a0f1e;--dark:#2a2a2a;--gold:#c9a15b;--ink:#2b1d17;--fs:16px;
+--glass:rgba(255,250,238,.55);--serif:'Playfair Display',Georgia,serif;--sans:'Roboto',Arial,sans-serif}
+body.contrast{--bg:#000;--cream:#111;--ink:#fff;--glass:#111;--gold:#ffd54a;--wine:#8b0020}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:var(--fs);scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);line-height:1.55;min-height:100vh;
+background:radial-gradient(circle at 15% 20%,#f3e7d0,transparent 45%),radial-gradient(circle at 85% 70%,#d9c3a0,transparent 50%),var(--bg);background-attachment:fixed}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.skip{position:absolute;left:-999px;background:var(--wine);color:#fff;padding:.5rem 1rem;z-index:99}.skip:focus{left:8px;top:8px}
+ 
+/* sidebar */
+.side{position:fixed;left:18px;top:18px;bottom:18px;width:86px;background:var(--dark);border:2px solid var(--wine);border-radius:44px;display:flex;flex-direction:column;justify-content:space-around;align-items:center;padding:1rem 0;z-index:50;box-shadow:0 20px 40px -15px rgba(0,0,0,.5)}
+.side a{width:66px;padding:.6rem 0;border-radius:20px;text-align:center;color:#e9dcc3;font-size:.62rem;letter-spacing:.04em;transition:.35s}
+.side a b{display:block;font-size:1.4rem;font-weight:400;line-height:1.2}
+.side a:hover,.side a.on{background:var(--wine);color:#fff;transform:scale(1.08)}
+ 
+/* layout */
+.page{margin-left:128px;padding:20px 28px 40px;max-width:1300px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:22px}
+.brand{font:500 2.1rem var(--serif);letter-spacing:.06em;text-transform:uppercase}
+.tools{display:flex;gap:.4rem;flex-wrap:wrap}
+.tools button{font:400 .72rem var(--sans);background:var(--glass);border:1px solid rgba(90,15,30,.3);border-radius:20px;padding:.3rem .8rem;cursor:pointer;color:var(--ink)}
+.tools button:hover{background:var(--wine);color:#fff}
+.search{background:var(--wine);border-radius:40px;padding:8px 10px 8px 22px;display:flex;align-items:center;gap:.6rem;width:min(430px,100%);box-shadow:0 0 0 5px rgba(255,255,255,.55)}
+.search input{flex:1;background:none;border:0;outline:0;color:#f1dfd0;font:300 1rem var(--sans)}.search input::placeholder{color:#d8b9b0}
+.search img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid #fff}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.box{border-radius:30px;padding:1.4rem;position:relative;animation:up .8s both}
+.glass{background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.7);box-shadow:0 14px 34px -18px rgba(70,40,10,.5)}
+.wine{background:var(--wine);color:#f6e9dc;box-shadow:0 14px 30px -14px rgba(90,15,30,.7)}
+@keyframes up{from{opacity:0;transform:translateY(30px)}}
+.box:nth-child(2){animation-delay:.1s}.box:nth-child(3){animation-delay:.2s}.box:nth-child(4){animation-delay:.3s}.box:nth-child(5){animation-delay:.4s}
+h2{font:500 1.7rem/1.1 var(--serif);margin-bottom:.3rem}
+h3{font:500 1.2rem var(--serif);margin-bottom:.4rem}
+.sub{font-size:.9rem;opacity:.75}
+ 
+/* hero blob */
+.hero{grid-column:1/9;grid-row:1/4;min-height:560px;color:#fff6e8;border-radius:70px 150px 60px 130px/110px 70px 150px 60px;padding:2.6rem;overflow:hidden;
+background:linear-gradient(120deg,rgba(25,10,10,.78),rgba(25,10,10,.1)),var(--hbg,url(images/g1.jpg)) center/cover;border:8px solid var(--cream);box-shadow:0 30px 60px -25px rgba(0,0,0,.6);transition:background .6s}
+.hero h1{font:500 clamp(2.4rem,5vw,4rem)/1.05 var(--serif);max-width:430px}
+.hero p{margin:.8rem 0 1.4rem;font-size:1.1rem;max-width:380px}
+.btn{display:inline-block;background:var(--wine);color:#fff;padding:.8rem 1.6rem;border-radius:30px;border:0;cursor:pointer;font:400 .95rem var(--sans);transition:.3s}
+.btn:hover{background:var(--gold);color:#000;transform:translateX(4px)}
+.btn.light{background:var(--cream);color:var(--wine)}
+.thumbs{position:absolute;left:2.4rem;bottom:2rem;display:flex;gap:10px;align-items:center}
+.thumbs img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:3px solid var(--cream);cursor:pointer;transition:.3s}
+.thumbs img:hover,.thumbs img.on{transform:scale(1.25);border-color:var(--gold)}
+.type{color:var(--gold);border-right:2px solid var(--gold);animation:blink 1s step-end infinite}@keyframes blink{50%{border-color:transparent}}
+ 
+/* cards */
+.prof{grid-column:9/13;display:flex;gap:1rem;align-items:center}
+.prof img.av{width:78px;height:78px;border-radius:18px;object-fit:cover}
+.prof strong{font:500 1.3rem var(--serif);display:block}
+.ico{display:inline-grid;place-items:center;width:30px;height:30px;border:1px solid #e8cfc3;border-radius:50%;font-size:.85rem;margin-right:6px;transition:.3s}.ico:hover{background:#f6e9dc;color:var(--wine)}
+.clock{grid-column:9/13}
+#time{font:500 3.4rem/1 var(--serif)}
+.pill{display:inline-block;background:rgba(255,255,255,.65);border-radius:20px;padding:.3rem .9rem;font-size:.85rem;margin-top:.7rem}
+.upc{grid-column:9/13}
+.upc .go{position:absolute;right:1.2rem;bottom:1.2rem;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center}
+.stories{grid-column:5/9;margin-top:-190px;z-index:4}
+.stories li{display:flex;gap:.8rem;align-items:center;background:#fffaf0;border-radius:18px;padding:.6rem;margin-bottom:.6rem;list-style:none;font-size:.9rem}
+.stories li img{width:70px;height:56px;border-radius:12px;object-fit:cover}
+.dest-head{grid-column:1/13;display:flex;justify-content:space-between;align-items:flex-end}
+.dest{grid-column:span 3;padding:.8rem;text-align:left}
+.dest img{border-radius:18px;height:170px;width:100%;object-fit:cover;transition:.6s}.dest:hover img{transform:scale(1.04)}
+.dest .row{display:flex;justify-content:space-between;align-items:center;margin-top:.7rem;padding:0 .3rem}
+.dest b{font-weight:500;letter-spacing:.02em;text-transform:uppercase;font-size:.95rem}
+.arrow{width:38px;height:38px;border-radius:50%;background:#fffaf0;display:grid;place-items:center;box-shadow:0 4px 10px rgba(0,0,0,.15)}
+ 
+.quote{grid-column:1/8;min-height:240px;color:#1d2a40;background:linear-gradient(90deg,rgba(255,255,255,.75),rgba(255,255,255,.1)),url(images/g2.jpg) center/cover;overflow:hidden}
+.quote q{display:block;font:500 1.9rem/1.2 var(--serif);margin:.8rem 0;max-width:330px;quotes:"\201C" "\201D"}
+.quick{grid-column:8/13;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:0;background:none;box-shadow:none;border:0}
+.quick a{background:var(--glass);border:1px solid #fff;border-radius:26px;padding:1rem .2rem;text-align:center;font-size:.8rem;transition:.35s;box-shadow:0 10px 25px -15px rgba(70,40,10,.6)}
+.quick a b{display:block;font-size:1.8rem;color:var(--wine);font-weight:400}
+.quick a:hover{background:var(--wine);color:#fff;transform:translateY(-6px)}.quick a:hover b{color:var(--gold)}
+.mapcard{grid-column:8/13;grid-row:span 2;padding:1.2rem}
+.mapcard img{border-radius:18px;margin-top:.8rem;width:100%}
+.player{grid-column:1/8;display:flex;align-items:center;gap:1rem;background:var(--glass);padding:.9rem 1.2rem;border-radius:40px}
+.player img{width:62px;height:62px;border-radius:14px;object-fit:cover}
+.pbar{height:4px;background:rgba(90,15,30,.2);border-radius:4px;margin-top:6px;overflow:hidden}.pbar i{display:block;height:100%;width:0;background:var(--wine)}
+.pbtn{width:54px;height:54px;border-radius:50%;border:0;background:var(--wine);color:#fff;font-size:1.3rem;cursor:pointer;margin-left:auto;box-shadow:0 8px 18px -6px rgba(90,15,30,.8)}
+ 
+/* tables, lists, text */
+.facts{grid-column:1/8}.lists{grid-column:8/13}.media{grid-column:1/8}.links{grid-column:8/13}
+table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:.6rem}
+caption{text-align:left;font:500 1.4rem var(--serif);padding-bottom:.4rem}
+th,td{padding:.55rem .7rem;border:1px solid rgba(90,15,30,.18);text-align:left}
+thead th{background:var(--wine);color:#fff;font-weight:400;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem}
+tbody th{background:rgba(201,161,91,.25);font-family:var(--serif);font-weight:500}
+tfoot td{background:var(--dark);color:#e9dcc3;text-align:center;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase}
+ul.star{list-style-type:"\2726  "}ul.star li::marker{color:var(--wine)}ul.dot{padding-left:1.2rem}ol.rom{list-style:upper-roman;padding-left:1.6rem}ol.rom li::marker{color:var(--wine);font-family:var(--serif);font-weight:700}
+ul,ol{padding-left:1.4rem;font-size:.95rem}
+mark{background:linear-gradient(transparent 55%,rgba(201,161,91,.6) 55%)}abbr{text-decoration:underline dotted var(--wine);cursor:help}
+pre{background:rgba(255,255,255,.6);border-left:4px solid var(--gold);padding:.7rem;font-size:.82rem;overflow:auto;margin-top:.6rem;border-radius:0 12px 12px 0}
+video{width:100%;border-radius:20px;background:#000;margin-top:.6rem}
+.tl{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.8rem}.tl a{width:76px;font-size:.62rem;text-align:center;letter-spacing:.08em;text-transform:uppercase}
+.tl img{border:2px solid var(--gold);border-radius:12px;margin-bottom:4px;transition:.3s}.tl a:hover img{transform:rotate(-4deg) scale(1.1)}
+.jump a{color:var(--wine);text-decoration:underline;text-underline-offset:3px;margin-right:.8rem;font-size:.85rem}
+ 
+footer{margin-top:28px;background:var(--dark);color:#d9ccb2;border-radius:30px;padding:1.6rem 2rem;font-size:.85rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
+footer h4{font:500 1.1rem var(--serif);color:var(--gold);margin-bottom:.3rem}footer a{color:#f4ecdc;text-decoration:underline}
+footer .own{grid-column:1/-1;border-top:1px solid rgba(201,161,91,.35);padding-top:1rem;text-align:center}
+.toast{position:fixed;right:20px;bottom:20px;background:var(--dark);color:#fff;border-left:4px solid var(--gold);padding:.9rem 1.2rem;border-radius:12px;max-width:300px;transform:translateX(130%);transition:.6s;z-index:99;font-size:.9rem}.toast.show{transform:none}
+body.textonly img,body.textonly video,body.textonly .mapcard map{display:none}body.textonly *{animation:none!important}
+body.textonly .hero{background:var(--wine)}
+ 
+@media(max-width:1000px){.hero,.prof,.clock,.upc,.stories,.quote,.quick,.mapcard,.player,.facts,.lists,.media,.links{grid-column:1/13;grid-row:auto;margin-top:0}.dest{grid-column:span 6}.upc{min-height:150px}}
+@media(max-width:700px){.side{top:auto;left:8px;right:8px;bottom:8px;width:auto;height:70px;flex-direction:row;border-radius:30px;padding:0 .4rem}.side a{width:auto;padding:.3rem .4rem;font-size:.5rem}.side a b{font-size:1.1rem}
+.page{margin:0;padding:16px 14px 100px}.dest{grid-column:span 12}.hero{border-radius:40px 80px 40px 70px}.thumbs{left:1.4rem}.quick{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+ 
+<!-- Sidebar navigation -->
+<nav class="side" aria-label="Main navigation">
+  <a href="index.html" class="on" aria-current="page"><b>&#8962;</b>Home</a>
+  <a href="biodata.html"><b>&#9787;</b>Biodata</a>
+  <a href="experience.html"><b>&#10022;</b>Experience</a>
+  <a href="education.html"><b>&#9998;</b>Education</a>
+  <a href="family.html"><b>&#9825;</b>Family</a>
+  <a href="gallery.html"><b>&#9635;</b>Gallery</a>
+  <a href="contact.html"><b>&#9993;</b>Contact</a>
+</nav>
+ 
+<div class="page">
+<header class="top">
+  <p class="brand">Qistina<span style="color:var(--gold)">.</span>Edit</p>
+  <div class="tools" role="toolbar" aria-label="Accessibility tools">
+    <button id="aDn" type="button" aria-label="Smaller text">A&minus;</button><button id="aUp" type="button" aria-label="Larger text">A+</button>
+    <button id="aCon" type="button">High Contrast</button><button id="aTxt" type="button">Text Only</button>
+  </div>
+  <form class="search" id="sform" role="search"><span aria-hidden="true">&#9906;</span><input id="q" type="text" placeholder="Explore my pages..." aria-label="Search this site"><img src="images/profile.jpg" alt="Profile photo"></form>
+</header>
+ 
+<main id="main" class="bento">
+ 
+  <!-- HERO -->
+  <section class="box hero" id="hero">
+    <h1>Stories of <span class="type" id="typed" data-w="Distinction|Ambition|Elegance|Craft"></span></h1>
+    <p><span id="greet">Hello</span>! I&rsquo;m <strong>Nurqistina Balqis Binti Suhaidi</strong>. Discover my story, my journey and the things I love.</p>
+    <a class="btn" href="biodata.html">View My Biodata &rarr;</a>
+    <div class="thumbs" aria-label="Change cover image">
+      <img class="on" src="images/g1.jpg" alt="Cover 1" data-i="1"><img src="images/g2.jpg" alt="Cover 2" data-i="2"><img src="images/g3.jpg" alt="Cover 3" data-i="3"><img src="images/g4.jpg" alt="Cover 4" data-i="4"><img src="images/g5.jpg" alt="Cover 5" data-i="5">
+    </div>
+  </section>
+ 
+  <!-- PROFILE -->
+  <section class="box wine prof" aria-label="Profile">
+    <img class="av" src="images/profile.jpg" alt="Portrait of Nurqistina Balqis Binti Suhaidi" width="78" height="78">
+    <div><strong>Nurqistina Balqis Binti Suhaidi</strong><span class="sub">ID: 2024123456 &bull; <abbr title="Universiti Teknologi MARA">UiTM</abbr></span><br>
+    <a class="ico" href="https://github.com" target="_blank" rel="noopener" title="GitHub">G</a><a class="ico" href="mailto:missqistina@example.com" title="Email">&#9993;</a><a class="ico" href="contact.html" title="Contact">&#9776;</a></div>
+  </section>
+ 
+  <!-- CLOCK / WEATHER-STYLE CARD -->
+  <section class="box glass clock" aria-label="Live clock">
+    <p id="time">--:--</p><p id="date" class="sub">Loading&hellip;</p>
+    <span class="pill">&#9906; Penang, Malaysia</span>
+  </section>
+ 
+  <!-- UPCOMING -->
+  <section class="box wine upc" aria-label="Upcoming">
+    <h3>Upcoming Project</h3><p class="sub" style="color:#f6e9dc">IMD318 Submission &bull; Week 12</p>
+    <p style="margin-top:.6rem;font-size:.9rem"><span id="countdown">&hellip;</span></p><a class="go" href="sitemap.html" aria-label="Site map">&rarr;</a>
+  </section>
+ 
+  <!-- LATEST STORIES -->
+  <section class="box glass stories" aria-label="Latest stories">
+    <h2>Latest Stories</h2>
+    <ul>
+      <li><img src="images/g3.jpg" alt=""><span>New: <a href="education.html"><u>Education</u></a> page with semester results.</span></li>
+      <li><img src="images/g4.jpg" alt=""><span>Updated: family <a href="family.html"><u>gallery &amp; tree</u></a>.</span></li>
+    </ul>
+  </section>
+ 
+  <!-- CHAPTERS (like Popular Destinations) -->
+  <div class="dest-head"><div><h2>Featured Chapters</h2><p class="sub">Handpicked pages from my personal magazine.</p></div><a class="btn light" href="sitemap.html">View All &rarr;</a></div>
+  <a class="box glass dest" href="biodata.html"><img src="images/g1.jpg" alt="Biodata"><div class="row"><div><b>Biodata</b><br><span class="sub">Chapter 02</span></div><span class="arrow">&rsaquo;</span></div></a>
+  <a class="box glass dest" href="experience.html"><img src="images/g5.jpg" alt="Experience"><div class="row"><div><b>Experience</b><br><span class="sub">Chapter 03</span></div><span class="arrow">&rsaquo;</span></div></a>
+  <a class="box glass dest" href="education.html"><img src="images/g7.jpg" alt="Education"><div class="row"><div><b>Education</b><br><span class="sub">Chapter 04</span></div><span class="arrow">&rsaquo;</span></div></a>
+  <a class="box glass dest" href="family.html"><img src="images/family1.jpg" alt="Family"><div class="row"><div><b>Family</b><br><span class="sub">Chapter 05</span></div><span class="arrow">&rsaquo;</span></div></a>
+ 
+  <!-- QUOTE + QUICK LINKS + MAP -->
+  <section class="box glass quote"><span class="sub">Inspiration</span><q>Design is simplicity with intention.</q><span class="sub">&mdash; My motto</span></section>
+  <div class="box quick">
+    <a href="gallery.html"><b>&#9635;</b>Gallery</a><a href="contact.html"><b>&#9993;</b>Contact</a><a href="sitemap.html"><b>&#9998;</b>Site Map</a><a href="#facts"><b>&#10022;</b>Facts</a>
+  </div>
+  <section class="box glass mapcard" id="imagemap">
+    <h2>Explore the Map</h2><p class="sub">Click a panel to jump to a chapter.</p>
+    <img src="images/explore-map.png" usemap="#issue" alt="Clickable banner: Biodata, Experience, Education, Family" width="900" height="240">
+    <map name="issue">
+      <area shape="rect" coords="0,0,225,240" href="biodata.html" alt="Biodata"><area shape="rect" coords="225,0,450,240" href="experience.html" alt="Experience">
+      <area shape="rect" coords="450,0,675,240" href="education.html" alt="Education"><area shape="rect" coords="675,0,900,240" href="family.html" alt="Family">
+    </map>
+    <p class="jump" style="margin-top:.8rem">Jump to: <a href="#facts">Facts</a><a href="#media">Media</a><a href="#links">Links</a></p>
+  </section>
+ 
+  <!-- MUSIC PLAYER -->
+  <section class="box player" aria-label="Music player">
+    <img src="images/g6.jpg" alt="Album art"><div style="flex:1"><strong>Ambient Evening</strong><br><span class="sub">Travel Vibes</span><div class="pbar"><i id="pfill"></i></div></div>
+    <audio id="aud" loop><source src="media/ambient.wav" type="audio/wav"></audio>
+    <button class="pbtn" id="pbtn" type="button" aria-label="Play or pause music">&#9654;</button>
+  </section>
+ 
+  <!-- QUICK FACTS TABLE -->
+  <section class="box glass facts" id="facts">
+    <table>
+      <caption>Quick Facts</caption>
+      <thead><tr><th colspan="2">Item</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><th rowspan="3" scope="rowgroup">About</th><td>Name</td><td>Nur Aisyah Rahman</td></tr>
+        <tr><td>Born</td><td>14<sup>th</sup> March 2005</td></tr>
+        <tr><td>Programme</td><td>Diploma in Information Management</td></tr>
+        <tr><th rowspan="2" scope="rowgroup">Study</th><td><abbr title="Cumulative Grade Point Average">CGPA</abbr></td><td>3.75</td></tr>
+        <tr><td>Favourite subject</td><td>IMD318 &ndash; Web Design</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="3">Data as at October 2026</td></tr></tfoot>
+    </table>
+    <pre>&lt;h1&gt;Hello, World!&lt;/h1&gt;   &lt;!-- built in Notepad --&gt;</pre>
+  </section>
+ 
+  <!-- LISTS -->
+  <section class="box glass lists">
+    <h3>Life Goals</h3><ol class="rom"><li>Graduate with <mark>distinction</mark></li><li>Build a career in digital content</li><li>Launch my own studio</li></ol>
+    <h3 style="margin-top:1rem">Hobbies</h3><ul class="star"><li>Reading</li><li>Travelling</li><li>Cooking</li></ul>
+    <h3 style="margin-top:1rem">Skills</h3><ul class="dot"><li>HTML &amp; CSS</li><li>JavaScript basics</li><li>H<sub>2</sub>O-fuelled all-nighters</li></ul>
+  </section>
+ 
+  <!-- VIDEO -->
+  <section class="box glass media" id="media">
+    <h2>Watch My Introduction</h2>
+    <video controls preload="metadata" poster="images/g1.jpg"><source src="media/intro.mp4" type="video/mp4">Your browser does not support video.</video>
+  </section>
+ 
+  <!-- EXTERNAL LINKS -->
+  <section class="box glass links" id="links">
+    <h2>Recommended Links</h2><p class="sub">Opens in a new tab.</p>
+    <div class="tl">
+      <a href="https://www.uitm.edu.my" target="_blank" rel="noopener"><img src="images/thumb-uitm.png" alt="UiTM" width="76" height="47">UiTM</a>
+      <a href="https://www.w3schools.com" target="_blank" rel="noopener"><img src="images/thumb-w3.png" alt="W3Schools" width="76" height="47">W3Schools</a>
+      <a href="https://github.com" target="_blank" rel="noopener"><img src="images/thumb-github.png" alt="GitHub" width="76" height="47">GitHub</a>
+    </div>
+  </section>
+</main>
+ 
+<footer>
+  <div><h4>About the Author</h4><strong>Nur Aisyah Rahman</strong><br>ID: 2024123456<br>Diploma in Information Management, <abbr title="Universiti Teknologi MARA">UiTM</abbr> Cawangan Pulau Pinang</div>
+  <div><h4>Contact</h4><a href="mailto:aisyah@example.com">aisyah@example.com</a><br>Bukit Mertajam, Penang<br><a href="contact.html">Send a message</a></div>
+  <div><h4>Dates</h4>Created: 10 November 2026<br>Last updated: <time id="lastmod">10 November 2026</time><br>Data collected: October 2026</div>
+  <div><h4>Accessibility</h4><a href="sitemap.html">Site map</a><br><a href="https://www.w3.org/WAI/" target="_blank" rel="noopener">W3C WAI</a><br><a href="https://www.nvaccess.org/" target="_blank" rel="noopener">NVDA screen reader</a></div>
+  <p class="own">&copy; 2026 Nur Aisyah Rahman. This website is the sole responsibility and property of Nur Aisyah Rahman (2024123456), produced for IMD318 individual project, UiTM, using a text editor only. <a href="#main">Back to top</a></p>
+</footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+ 
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},$$=function(s){return [].slice.call(document.querySelectorAll(s))};
+var toast=$("#toast"),tt;function notify(m){toast.textContent=m;toast.classList.add("show");clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove("show")},4000)}
+ 
+/* live clock + greeting */
+function tick(){var d=new Date();$("#time").textContent=d.toLocaleTimeString("en-GB",{timeZone:"Asia/Kuala_Lumpur",hour:"2-digit",minute:"2-digit"});
+$("#date").textContent=d.toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric"})}
+tick();setInterval(tick,1000);
+var h=new Date().getHours(),g=h<12?"Good morning":h<18?"Good afternoon":"Good evening";$("#greet").textContent=g;
+setTimeout(function(){notify(g+"! Welcome to my personal magazine.")},800);
+ 
+/* countdown to submission (edit the date to your Week 12 deadline) */
+var due=new Date("2026-12-01T23:59:00+08:00");
+function cd(){var ms=due-new Date();$("#countdown").textContent=ms>0?"Due in "+Math.floor(ms/864e5)+" days "+Math.floor(ms%864e5/36e5)+" hrs":"Submitted - thank you!"}cd();setInterval(cd,60000);
+ 
+/* typewriter */
+var ty=$("#typed"),w=ty.dataset.w.split("|"),wi=0,ci=0,dl=false;
+(function t(){var x=w[wi];ty.textContent=x.slice(0,ci);if(!dl&&ci<x.length){ci++;setTimeout(t,110)}else if(!dl){dl=true;setTimeout(t,1300)}else if(ci>0){ci--;setTimeout(t,50)}else{dl=false;wi=(wi+1)%w.length;setTimeout(t,300)}})();
+ 
+/* hero cover switcher */
+$$(".thumbs img").forEach(function(im){im.addEventListener("click",function(){$$(".thumbs img").forEach(function(x){x.classList.remove("on")});im.classList.add("on");
+$("#hero").style.setProperty("--hbg","url(images/g"+im.dataset.i+".jpg)")})});
+ 
+/* music player */
+var a=$("#aud"),pb=$("#pbtn");pb.addEventListener("click",function(){if(a.paused){a.play();pb.innerHTML="&#10074;&#10074;"}else{a.pause();pb.innerHTML="&#9654;"}});
+a.addEventListener("timeupdate",function(){$("#pfill").style.width=(a.currentTime/a.duration*100||0)+"%"});
+ 
+/* accessibility */
+var fs=16,B=document.body;function sf(){document.documentElement.style.setProperty("--fs",fs+"px")}
+$("#aUp").onclick=function(){fs=Math.min(22,fs+1);sf()};$("#aDn").onclick=function(){fs=Math.max(12,fs-1);sf()};
+$("#aCon").onclick=function(){B.classList.toggle("contrast")};$("#aTxt").onclick=function(){B.classList.toggle("textonly");notify(B.classList.contains("textonly")?"Text-only mode on":"Text-only mode off")};
+ 
+/* search */
+var map={home:"index.html",bio:"biodata.html",biodata:"biodata.html",about:"biodata.html",experience:"experience.html",work:"experience.html",education:"education.html",school:"education.html",cgpa:"education.html",family:"family.html",gallery:"gallery.html",photo:"gallery.html",contact:"contact.html",email:"contact.html",sitemap:"sitemap.html"};
+$("#sform").addEventListener("submit",function(e){e.preventDefault();var q=$("#q").value.trim().toLowerCase();if(map[q])location.href=map[q];else notify("No page found for \u201C"+q+"\u201D. Try: biodata, education, gallery...")});
+ 
+/* last modified */
+var m=new Date(document.lastModified);if(!isNaN(m))$("#lastmod").textContent=m.toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"});
+})();
+</script>
+</body>
+</html>
